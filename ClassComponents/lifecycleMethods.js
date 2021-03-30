@@ -10,7 +10,7 @@ class App extends Component {
         // can get the the data we need to correctly display
     }
 
-    componentWillReceiveProps(nextProps){ // ****** has been depricated by React ***** 
+    componentWillReceiveProps(nextProps){ // ****** has been deprecated by React ***** 
         if (nextProps.whatever !== this.props.whatever) {
             // do something important here
         }
@@ -37,7 +37,8 @@ class App extends Component {
     }
     
     componentDidUpdate(){
-
+        // something you want to run everytime the componenet rerenders
+        // ex. change the color of element when button is clicked
     }
     render() {
         return (
@@ -76,7 +77,7 @@ export default App
         - accepts two parameters >>> prevProps and prevState
         - you want to set a conditional if you are going to setState inside this method, otherwise it will cause and infinite loop
 
-****** Has Been Depricated ********
+****** Has Been Deprecated ********
 
 => componentWillReceiveProps() = this component could be receiving props from a parent componenet, and everytime this component is revieving props, 
                                  it will run this method
