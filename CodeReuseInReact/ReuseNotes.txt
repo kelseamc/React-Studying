@@ -1,0 +1,32 @@
+
+******* Inheritance vs. Composition *******
+
+=> Inheritance : drives Object Oriented programming. Classes, Sub-Classes, creating objects/instances from those classes and inheriting 
+                 traits from those classes
+                 - design your types around what they are
+
+=> Composition : a way to compose you code structure by pulling together bits and pieces you need
+                 - design your types around what they do
+
+For React applications === Composition over Inheritance
+
+
+******* React Code Use Patterns *******
+    1. Components with props
+         ~ base unit for code reuse in React 
+         ~ like a function you can call over and over again
+         ~ can make components more reuseable => instead of hard coding data you can pass in props and depending on the props passed in 
+            can render things differently
+
+    2. Children 
+          ~ If you want the person using your component to have full control over what is being diplayed inside the comonent
+         
+    3. Higher-Order Components
+          ~ A function that takes a component as its first argument and returns a new component that wraps the given component, providing
+            extra capabilities to it. 
+          ~ ex. export default withToggle(Component)
+                
+
+    4. Render Props
+    
+    ** both Higher-Order Components and Render Props became outdated with introduction of Hooks **
