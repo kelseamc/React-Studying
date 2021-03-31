@@ -10,6 +10,8 @@ class App extends React.Component {
         }
 
         this.handleClick = this.handleClick.bind(this) // this is how you bind a function to the class (because it uses setState)
+                                                        // ** don't need to bind if you write class function like arrrow functions** 
+                                                     
     }
     
     yourMethodHere() {  
@@ -20,6 +22,7 @@ class App extends React.Component {
             return {
                 count: prevState.count + 1
             }
+
         })  
         
         // this.setState({count: 1})        This is how you set state when you just want to replace the value, but don't care about previous value
