@@ -20,5 +20,5 @@ class Menu extends Component {
     }
 }
 
-const SuperChargedMenu = withToggler(Menu)
+const SuperChargedMenu = withToggler(Menu, {defaultOnValue: true})
 export default SuperChargedMenu

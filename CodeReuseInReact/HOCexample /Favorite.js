@@ -19,5 +19,5 @@ class Favorite extends Component {
     }
 }
 
-const SuperChargedFavorite = withToggler(Favorite)
+const SuperChargedFavorite = withToggler(Favorite, {defaultOnValue: false})
 export default SuperChargedFavorite
