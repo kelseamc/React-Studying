@@ -26,8 +26,19 @@ For React applications === Composition over Inheritance
             extra capabilities to it. 
           ~ ex. export default withToggle(Component)
 
-                
-
     4. Render Props
+          ~ 
     
     ** both Higher-Order Components and Render Props became outdated with introduction of Hooks **
+
+
+******* React Tree Rendering *******
+
+=> React recursively renders components down one branch until there is no more to render 
+      - a child component that has two grandchild components, will render BOTH of its grandchild components before its parent goes on to 
+        render the next child(its sibling)
+
+=> Changes to state or props in any component will recursively re-render down the remaining tree whether the those components have changed or not
+      - the component with the state change re-renders as well as all the its child and grandchild components
+      - the more components that have to re-render after state change the more performance decreases
+      - shouldComponentUpdate(), React.PureComponent, and React.memo() are tools to help fix this problem

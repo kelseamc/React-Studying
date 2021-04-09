@@ -1,0 +1,30 @@
+
+************************* React Optimizations ***************************
+
+// What is "Shallow Comparison" ? //
+    => between two objects, a "Shallow Comparison" is a comparison between the keys of one object and the keys of another
+    ** you can't compare two objects directly because each instance of an object is stored in a different space of memory 
+    
+
+// shouldComponentUpdate() //   *class component
+    => Lifecycle method on class component, that allows you to determine if a component should update or not 
+    => Receives the upcoming props and state so you can compare them against current props and state 
+    => Return true if "yes re-render", false if "no, don't re-render"
+    ** Don't do deep equality checks in here **
+    ~ should use PureComponent if/when possible
+
+
+// React.PureComponent //    *class component
+    => Alternative to React.Component, it automatically implements shouldComponentUpdate() for shallow props and state components 
+    (Disallows using shouldComponentUpdate() manually )
+    ** Skips rerendering all the children in the tree automatically, so they must be "pure" as well 
+    ~ Generally preferred over shouldComponentUpdate()
+
+
+// React.memo() //  *functional component
+    => Pretty much the same thing as PureComponent but for functional components. It only compares preProbs and nextProps (no state checking)
+    ** You can optionally implement your own checking function to determine if it should use the memoized result 
+        ~ should return true if props are same and don't rerender and false if they aren't and need to rerender ( opposite of shouldComponentUpdate() )
+
+
+        
