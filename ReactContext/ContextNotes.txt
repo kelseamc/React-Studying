@@ -1,0 +1,19 @@
+**************** Context ****************
+
+// Context Provider //
+=> this is the parent component to the Conext Consumer components.
+    - uses the createContext() method which gives and object for Provider and Consumer
+    - the provider component will then be wrapped in the provider tags 
+    * must pass a value prop to the provider => this is whatever data you are trying to save
+
+// ContextType //
+=> only works in class components
+    - there isn't a way to pass down a method to change the context 
+    - access context using this.context
+
+// Context Consumer //
+=> uses a render prop that is going to be injected to the children elements betweeen the opening and closing 
+   Consumer component tags 
+   - need to provide a function and when you call it, call it with the context. This function will return the elements 
+     you want to have access to that context
+   * for functional components 

@@ -72,7 +72,7 @@ export default React.memo(GrandParent)
 // })
 
 
-/*********** If I want to write custome areEqual function instead of the one under the hood of memo  ************/
+/*********** If I want to write custom areEqual function instead of the one under the hood of memo  ************/
 
 // import React from "react"
 // import Parent from "./Parent"
