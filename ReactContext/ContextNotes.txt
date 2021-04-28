@@ -2,18 +2,31 @@
 
 // Context Provider //
 => this is the parent component to the Conext Consumer components.
-    - uses the createContext() method which gives and object for Provider and Consumer
+    - uses the createContext() method which gives an object for Provider and Consumer
     - the provider component will then be wrapped in the provider tags 
     * must pass a value prop to the provider => this is whatever data you are trying to save
 
 // ContextType //
-=> only works in class components
+=> only works in CLASS components
     - there isn't a way to pass down a method to change the context 
     - access context using this.context
 
-// Context Consumer //
-=> uses a render prop that is going to be injected to the children elements betweeen the opening and closing 
+// Context Consumer // * Functional components *
+=> uses render props that is going to be injected to the children elements betweeen the opening and closing 
    Consumer component tags 
    - need to provide a function and when you call it, call it with the context. This function will return the elements 
      you want to have access to that context
    * for functional components 
+
+
+Context should be it's own component!
+  => so make sure to destructure your React.createContext() ex. const {Provider, Consumer} = React.createContext()
+      - this is so you can export both the provider and consumer ex. export {ThemeContextProvider, Consumer as ThemeContextConsumer}
+  => this prevents details and data pertaining to your context from being placed in the provider componenet and instead in it's own componenet
+  => We then place a state value in the component and pass it down as our provider value 
+  => making the provider value and object that allows you to pass down state and setstate functions
+    ex. <Provider value={{theme: this.state.theme, toggleTheme: this.toggleTheme}}>
+    => in the consumer then, in order to access you state, in the render props you need to then call the key of object 
+    ex. {context => (
+                <button onClick={context.toggleTheme} className={`${context.theme}-theme`}>Switch Theme</button>
+            )}
